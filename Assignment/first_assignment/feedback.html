@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../second_assignment/style.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="feedback.html">Feedback</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+
+        <!-- ID Selector -->
+        <h2 id="special-heading">Feedback Form</h2>
+
+        <!-- Box Model -->
+        <div class="box-model">
+
+            <form action="#" method="post">
+
+                <!-- Full Name -->
+                <label for="fullname">Full Name:</label><br>
+                <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" minlength="3"
+                    required>
+
+                <br><br>
+
+                <!-- Email -->
+                <label for="email">Email Address:</label><br>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+                <br><br>
+
+                <!-- Rating -->
+                <p><strong>Rate Your Experience:</strong></p>
+
+                <input type="radio" id="verysatisfied" name="rating" required>
+                <label for="verysatisfied">Very Satisfied</label><br>
+
+                <input type="radio" id="satisfied" name="rating">
+                <label for="satisfied">Satisfied</label><br>
+
+                <input type="radio" id="neutral" name="rating">
+                <label for="neutral">Neutral</label><br>
+
+                <input type="radio" id="unsatisfied" name="rating">
+                <label for="unsatisfied">Unsatisfied</label>
+
+                <br><br>
+
+                <!-- Interests -->
+                <p><strong>Interests:</strong></p>
+
+                <input type="checkbox" id="webdev">
+                <label for="webdev">Web Development</label><br>
+
+                <input type="checkbox" id="mobiledev">
+                <label for="mobiledev">Mobile Development</label><br>
+
+                <input type="checkbox" id="ai">
+                <label for="ai">AI & Machine Learning</label>
+
+                <br><br>
+
+                <!-- Country -->
+                <label for="country">Select Your Country:</label><br>
+
+                <select id="country" required>
+                    <option value="">--Choose a Country--</option>
+                    <option value="Nepal">Nepal</option>
+                    <option value="Japan">Japan</option>
+                    <option value="USA">USA</option>
+                </select>
+
+                <br><br>
+
+                <!-- Feedback -->
+                <label for="feedback">Write your feedback:</label><br>
+
+                <textarea id="feedback" rows="5" cols="35" placeholder="Write your feedback here..." maxlength="300"
+                    required></textarea>
+
+                <br><br>
+
+                <!-- Submit -->
+                <button type="submit">Submit</button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
