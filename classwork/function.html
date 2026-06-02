@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Callback Function Example</title>
+</head>
+<body>
+
+    <p id="result"></p>
+
+    <script>
+        function processNumber(number, callback) {
+            callback(number);
+        }
+
+        function printSquare(num) {
+            document.getElementById("result").textContent =
+                "Square: " + (num * num);
+        }
+
+        processNumber(5, printSquare);
+    </script>
+
+</body>
+</html>
