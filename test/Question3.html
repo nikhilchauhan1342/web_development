@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout Simulation</title>
+</head>
+<body>
+    <button id="btn">Logout</button>
+    <h3 id="message"></h3>
+    <script>
+        const btn=document.getElementById("btn")
+        const message =document.getElementById("message")
+
+        function logOut(){
+            return new Promise((resolve)=>{
+                setTimeout(()=>{
+                    resolve("You have been Logout")
+                }, 2000)
+            })
+        }
+        
+
+        btn.addEventListener("click", ()=>{
+
+            message.textContent="Logging out..."
+
+        logOut().then(result =>{
+            
+            message.textContent=result
+            btn.textContent="login"
+        
+        })
+            
+
+
+        })
+
+
+    </script>
+
+</body>
+</html>

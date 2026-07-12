@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fetch API</title>
+</head>
+<body>
+
+<h2>Users List</h2>
+
+<p id="msg">Loading users...</p>
+
+<table border="1" id="table" style="display:none;">
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Address</th>
+    </tr>
+</table>
+
+<script>
+fetch("https://jsonplaceholder.typicode.com/users")
+.then(res => res.json())
+.then(data => {
+    document.getElementById("msg").style.display = "none";
+    document.getElementById("table").style.display = "table";
+
+    let table = document.getElementById("table");
+
+    data.forEach(user => {
+        table.innerHTML += `
+        <tr>
+            <td>${user.name}</td>
+            <td>${user.email}</td>
+            <td>${user.address.city}</td>
+        </tr>`;
+    });
+})
+.catch(() => {
+    document.getElementById("msg").innerText = "Failed to load data";
+});
+</script>
+
+</body>
+</html>
