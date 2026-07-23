@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Tracker Pro</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+      <!-- login  and register -->
+  <div id="authPage" class="auth-page">
+    <div class="auth-box">
+      <div class="logo">💰 Finance Tracker</div>
+
+      <!-- login form -->
+      <form id="loginForm" class="auth-form">
+        <h2>Login</h2>
+        <input type="text" id="loginUsername" placeholder="Username" required>
+        <input type="password" id="loginPassword" placeholder="Password" required>
+        <button type="submit">Login</button>
+        <p id="loginError" class="auth-error"></p>
+        <p class="auth-switch">Don't have an account? <a href="#" id="showRegister">Register</a></p>
+      </form>
+
+      <!-- register form -->
+      <form id="registerForm" class="auth-form hidden">
+        <h2>Create Account</h2>
+        <input type="text" id="registerUsername" placeholder="Username" required>
+        <input type="password" id="registerPassword" placeholder="Password" required>
+        <input type="password" id="registerConfirm" placeholder="Confirm Password" required>
+        <button type="submit">Register</button>
+        <p id="registerError" class="auth-error"></p>
+        <p class="auth-switch">Already have an account? <a href="#" id="showLogin">Login</a></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- App hidden until login -->
+  <div id="appContainer" class="app-container hidden">
+
+  <!-- left side navigation -->
+  <aside class="sidebar">
+    <div class="logo">💰 Finance Tracker</div>
+
+    <nav class="nav-links">
+      <button class="nav-btn active" data-page="dashboard">📊 Dashboard</button>
+      <button class="nav-btn" data-page="transactions">🧾 Transactions</button>
+      <button class="nav-btn" data-page="charts">📈 Charts</button>
+      <button class="nav-btn" data-page="goal">🎯 Savings Goal</button>
+      <button class="nav-btn" data-page="reports">📄 Reports</button>
+    </nav>
+
+    <p id="welcomeUser" class="welcome-user"></p>
+    <button id="darkModeBtn" class="dark-btn">🌙 Dark Mode</button>
+    <button id="logoutBtn" class="logout-btn">🚪 Logout</button>
+  </aside>
+
+  <!-- main content -->
+  <main class="content">
+
+    <!-- dashboard page -->
+    <section id="dashboard" class="page active">
+      <h1>Dashboard</h1>
+
+      <div class="cards">
+        <div class="card income-card">
+          <p>Total Income</p>
+          <h2 id="totalIncome">Rs. 0</h2>
+        </div>
+        <div class="card expense-card">
+          <p>Total Expense</p>
+          <h2 id="totalExpense">Rs. 0</h2>
+        </div>
+        <div class="card balance-card">
+          <p>Balance</p>
+          <h2 id="totalBalance">Rs. 0</h2>
+        </div>
+      </div>
+
+      <h3>Add a Transaction</h3>
+      <form id="transactionForm" class="form">
+        <input type="text" id="title" placeholder="Title (e.g. Groceries)" required>
+        <input type="number" id="amount" placeholder="Amount" required>
+        <select id="type">
+          <option value="income">Income</option>
+          <option value="expense">Expense</option>
+        </select>
+        <button type="submit">Add</button>
+      </form>
+    </section>
+
+    <!-- transactions page -->
+    <section id="transactions" class="page">
+      <h1>Transaction History</h1>
+      <input type="text" id="searchBox" placeholder="🔍 Search transactions...">
+      <ul id="transactionList" class="transaction-list"></ul>
+    </section>
+
+    <!-- chart page -->
+    <section id="charts" class="page">
+      <h1>Income vs Expense</h1>
+      <canvas id="mainChart" width="400" height="250"></canvas>
+    </section>
+
+    <!-- saving goal page -->
+    <section id="goal" class="page">
+      <h1>Savings Goal</h1>
+      <form id="goalForm" class="form">
+        <input type="number" id="goalAmount" placeholder="Set goal amount (Rs.)">
+        <button type="submit">Save Goal</button>
+      </form>
+      <p id="goalStatus"></p>
+      <div class="progress-bar">
+        <div id="goalProgress" class="progress-fill"></div>
+      </div>
+    </section>
+
+    <!-- report page -->
+    <section id="reports" class="page">
+      <h1>Download Report</h1>
+      <p>Generate a PDF summary of your income, expenses, and transaction history.</p>
+      <button id="downloadPdf">⬇ Download PDF Report</button>
+    </section>
+
+  </main>
+
+  </div> 
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="auth.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
